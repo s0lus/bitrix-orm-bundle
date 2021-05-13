@@ -4,10 +4,13 @@ namespace Prokl\BitrixOrmBundle\Base\Repository;
 
 use Prokl\BitrixOrmBundle\Base\Collection\CdbResultItemCollection;
 use Prokl\BitrixOrmBundle\Base\Factories\Interfaces\CdbResultItemFactoryInterface;
-use Prokl\BitrixOrmBundle\Base\Model\SearchItem;
 use Prokl\BitrixOrmBundle\Base\Query\CdbResultQuery;
 use Prokl\BitrixOrmBundle\Base\Query\SearchQuery;
 
+/**
+ * Class SearchRepository
+ * @package Prokl\BitrixOrmBundle\Base\Repository
+ */
 class SearchRepository extends CdbResultRepository
 {
      /**
@@ -46,7 +49,7 @@ class SearchRepository extends CdbResultRepository
      * @param integer $offset
      * @param array $criteriaEx Массив массивов, содержащий дополнительные условия поиска.
      *
-     * @return CdbResultItemCollection|SearchItem[]
+     * @return CdbResultItemCollection
      *
      * @link https://dev.1c-bitrix.ru/api_help/search/classes/csearch/search.php
      */

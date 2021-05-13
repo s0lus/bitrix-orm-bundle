@@ -104,7 +104,7 @@ class FactoryFactory
             $reflection  = new \ReflectionClass($definition->getClass());
             $constructor = $reflection->getConstructor();
 
-            foreach ($constructor->getParameters() as $parameter) {
+            foreach ((array)$constructor->getParameters() as $parameter) {
                 if (!$parameterClass = $parameter->getClass()) {
                     continue;
                 }

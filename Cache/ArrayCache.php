@@ -255,7 +255,7 @@ class ArrayCache implements CacheInterface
     /**
      * @param HasIdInterface $item
      *
-     * @return mixed
+     * @return boolean
      */
     public function set(HasIdInterface $item): bool
     {

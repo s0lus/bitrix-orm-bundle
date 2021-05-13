@@ -83,7 +83,7 @@ abstract class IblockElement extends BitrixArrayItemBase implements
     protected $PREVIEW_PICTURE;
 
     /**
-     * @var File
+     * @var File | null
      */
     protected $previewPicture;
 
@@ -108,7 +108,7 @@ abstract class IblockElement extends BitrixArrayItemBase implements
     protected $DETAIL_PICTURE;
 
     /**
-     * @var File
+     * @var File | null
      */
     protected $detailPicture;
 
@@ -320,7 +320,7 @@ abstract class IblockElement extends BitrixArrayItemBase implements
     }
 
     /**
-     * @return null|DateTimeImmutable
+     * @return mixed
      */
     public function getDateActiveTo()
     {

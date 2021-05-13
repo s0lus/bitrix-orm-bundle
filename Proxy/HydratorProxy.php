@@ -74,8 +74,8 @@ class HydratorProxy
     /**
      * Обнаруживает создаваемые репозиторием объекты в возвращаемом результате и гидрирует их.
      *
-     * @param $name
-     * @param $arguments
+     * @param mixed $name
+     * @param array $arguments
      *
      * @throws Throwable
      * @return mixed

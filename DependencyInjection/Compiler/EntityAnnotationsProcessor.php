@@ -144,7 +144,7 @@ class EntityAnnotationsProcessor implements CompilerPassInterface
         }
 
         if ($container->hasParameter(SymfonyParameters::NAMESPACES_EXTENDED_PARAMETER_NAME)) {
-            $namespaces = $container->getParameter(SymfonyParameters::NAMESPACES_EXTENDED_PARAMETER_NAME);
+            $namespaces = (array)$container->getParameter(SymfonyParameters::NAMESPACES_EXTENDED_PARAMETER_NAME);
             /**
              * @var string $prefix
              * @var string $dir
@@ -200,7 +200,7 @@ class EntityAnnotationsProcessor implements CompilerPassInterface
      */
     protected function getSourcesDir(ContainerBuilder $container): string
     {
-        return $container->getParameter('kernel.project_dir');
+        return (string)$container->getParameter('kernel.project_dir');
     }
 
     /**

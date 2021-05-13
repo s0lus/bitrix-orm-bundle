@@ -25,12 +25,12 @@ class IblockTools
     const IBLOCK_ID_KEY = 'IBLOCK_ID';
 
     /**
-     * @var array
+     * @var array|null
      */
     private static $iblockInfo;
 
     /**
-     * @var array <iblock_id> => <property_code> => <array_of_property_fields>
+     * @var array|null <iblock_id> => <property_code> => <array_of_property_fields>
      */
     private static $propertyInfo;
 
@@ -40,7 +40,7 @@ class IblockTools
      * @param string $type
      * @param string $code
      *
-     * @return int
+     * @return integer
      * @throws IblockNotFoundException
      * @throws Exception
      */
@@ -122,7 +122,7 @@ class IblockTools
     protected static function getAllIblockInfo(bool $clearCache = false): array
     {
         if (null === self::$iblockInfo || true === $clearCache) {
-            $closure = function () {
+            $closure = function () : array {
                 $iblockList = IblockTable::query()
                                          ->setSelect(
                                              ['ID', 'IBLOCK_TYPE_ID', 'CODE', 'XML_ID']
@@ -256,10 +256,8 @@ class IblockTools
     {
         if (null === self::$propertyInfo || true === $clearCache) {
 
-            $closure = function () {
-
+            $closure = function () : array {
                 $propertyInfo = [];
-
                 $propertyList = PropertyTable::query()
                                              ->setSelect(['*'])
                                              ->setFilter([])
@@ -323,7 +321,6 @@ class IblockTools
      */
     public static function convertPropertyValuesKeyInIblockElementFields(array $fields): array
     {
-
         if (!array_key_exists(self::IBLOCK_ID_KEY, $fields)) {
             throw new InvalidArgumentException(
                 sprintf(

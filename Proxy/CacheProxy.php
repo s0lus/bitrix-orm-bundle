@@ -99,7 +99,7 @@ class CacheProxy
      */
     public function __call($name, $arguments)
     {
-        $callback = function () use ($name, $arguments) {
+        $callback = function () use ($name, $arguments) : array {
             return [
                 'result' => $this->subject->$name(...$arguments),
             ];

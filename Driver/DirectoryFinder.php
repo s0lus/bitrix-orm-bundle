@@ -16,12 +16,12 @@ class DirectoryFinder implements DirectoryFinderInterface
     /**
      * @var string
      */
-    protected $rootDir;
+    private $rootDir;
 
     /**
-     * @var string[]
+     * @var string[] | null
      */
-    protected $directoryNames = [];
+    private $directoryNames = [];
 
     /**
      * DirectoryFinder constructor.
@@ -55,7 +55,7 @@ class DirectoryFinder implements DirectoryFinderInterface
                ->ignoreUnreadableDirs(true)
                ->in($this->rootDir);
 
-        foreach ($this->directoryNames as $name) {
+        foreach ((array)$this->directoryNames as $name) {
             $finder->name($name);
         }
         $result = new ArrayCollection();

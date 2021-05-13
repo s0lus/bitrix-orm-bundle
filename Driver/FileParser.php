@@ -14,7 +14,7 @@ class FileParser implements FileParserInterface
     /**
      * @var string
      */
-    protected $fileName;
+    private $fileName;
 
     /**
      * FileParser constructor.

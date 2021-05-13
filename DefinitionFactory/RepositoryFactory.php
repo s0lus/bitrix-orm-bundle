@@ -144,7 +144,7 @@ class RepositoryFactory
         try {
             return IblockTools::getIblockId($iblockType, $iblockCode);
         } catch (\Exception $e) {
-            throw new RepositoryDefinitionException($e->getMessage(), $e->getCode(), $e);
+            throw new RepositoryDefinitionException($e->getMessage(), (int)$e->getCode(), $e);
         }
     }
 }

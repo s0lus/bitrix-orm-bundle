@@ -18,27 +18,27 @@ class Scanner implements ScannerInterface
     /**
      * @var Reader
      */
-    protected $reader;
+    private $reader;
 
     /**
-     * @var string
+     * @var string | null
      */
-    protected $namespacePrefix;
+    private $namespacePrefix;
 
     /**
-     * @var string
+     * @var string | null
      */
-    protected $namespaceRoot;
-
-    /**
-     * @var string[]
-     */
-    protected $paths = [];
+    private $namespaceRoot;
 
     /**
      * @var string[]
      */
-    protected $classNames = [];
+    private $paths = [];
+
+    /**
+     * @var string[]
+     */
+    private $classNames = [];
 
     /**
      * Scanner constructor.
@@ -137,7 +137,7 @@ class Scanner implements ScannerInterface
     }
 
     /**
-     * @param $annotation
+     * @param mixed $annotation
      *
      * @return boolean
      */

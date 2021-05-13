@@ -23,17 +23,17 @@ class HlblockTools
     const ENTITY_PREFIX_HLBLOCK = 'HLBLOCK_';
 
     /**
-     * @var array <name> => [ <fields> ]
+     * @var array|null <name> => [ <fields> ]
      */
     protected static $hlBlockInfo = null;
 
     /**
-     * @var array
+     * @var array | null
      */
     protected static $hlBlockFieldInfo = null;
 
     /**
-     * @var array
+     * @var array | null
      */
     protected static $userFieldEnum = null;
 
@@ -259,7 +259,7 @@ class HlblockTools
     protected static function getAllUserFieldEnum(bool $clearCache = false): array
     {
         if (null === self::$userFieldEnum || true === $clearCache) {
-            $closure = function () {
+            $closure = function () : array {
                 $userFieldEnum = [];
                 $dbEnumList = (new CUserFieldEnum())->GetList();
                 while ($enumValue = $dbEnumList->Fetch()) {
@@ -293,7 +293,7 @@ class HlblockTools
     {
         if (null === self::$hlBlockFieldInfo || true === $clearCache) {
 
-            $closure = function () {
+            $closure = function () : array {
                 $hlBlockFieldInfo = [];
                 $fieldList = CUserTypeEntity::GetList();
                 while ($field = $fieldList->Fetch()) {
@@ -322,7 +322,7 @@ class HlblockTools
     {
         if (null === self::$hlBlockInfo || true === $clearCache) {
 
-            $closure = function () {
+            $closure = function () : array {
                 $hlBlockInfo = [];
                 $hlBlockList = HighloadBlockTable::query()
                                                  ->setSelect(['*'])

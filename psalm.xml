@@ -56,6 +56,36 @@
             </errorLevel>
         </UndefinedConstant>
 
+        <InvalidArgument>
+            <errorLevel type="suppress">
+                <directory name="/"/>
+            </errorLevel>
+        </InvalidArgument>
+
+        <TooFewArguments>
+            <errorLevel type="suppress">
+                <directory name="/"/>
+            </errorLevel>
+        </TooFewArguments>
+
+        <ArgumentTypeCoercion>
+            <errorLevel type="suppress">
+                <directory name="/"/>
+            </errorLevel>
+        </ArgumentTypeCoercion>
+
+        <LessSpecificReturnStatement>
+            <errorLevel type="suppress">
+                <directory name="/"/>
+            </errorLevel>
+        </LessSpecificReturnStatement>
+
+        <UndefinedMethod>
+            <errorLevel type="suppress">
+                <file name="Proxy/CacheProxy.php"/>
+            </errorLevel>
+        </UndefinedMethod>
+
         <UndefinedFunction>
             <errorLevel type="suppress">
                 <directory name="/"/>

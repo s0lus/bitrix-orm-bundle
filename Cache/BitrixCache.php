@@ -59,14 +59,14 @@ class BitrixCache implements BitrixCacheInterface
      *
      * @param string      $modelClass
      * @param integer     $cacheTime
-     * @param string      $tag
+     * @param string|null $tag
      * @param string|null $collectionTag
      */
     public function __construct(
         string $modelClass,
         int $cacheTime,
-        string $tag = null,
-        string $collectionTag = null
+        ?string $tag = null,
+        ?string $collectionTag = null
     )
     {
         $this->modelClass     = $modelClass;
@@ -372,7 +372,7 @@ class BitrixCache implements BitrixCacheInterface
     }
 
     /**
-     * @param $items
+     * @param mixed $items
      *
      * @return mixed
      * @throws \ReflectionException
@@ -397,7 +397,7 @@ class BitrixCache implements BitrixCacheInterface
      */
     protected function needInjectFileRepository(): bool
     {
-        if (null === $this->injectFileRepository) {
+        if (!$this->injectFileRepository) {
             $reflection                 = new \ReflectionClass($this->modelClass);
             $this->injectFileRepository = $reflection->implementsInterface(FileRepositoryAwareInterface::class);
         }

@@ -69,7 +69,7 @@ abstract class IblockSectionRepository extends CdbResultRepository
     }
 
     /**
-     * @return IblockSectionFactory
+     * @return CdbResultItemFactoryInterface
      */
     public function getFactory(): CdbResultItemFactoryInterface
     {
@@ -309,7 +309,7 @@ abstract class IblockSectionRepository extends CdbResultRepository
             array_merge(['LEFT_MARGIN' => 'ASC'], $order)
         );
 
-        $createTree = function (ArrayCollection $collection, int $depth) use ($rawCollection, &$createTree) {
+        $createTree = function (ArrayCollection $collection, int $depth) use ($rawCollection, &$createTree) : bool {
             $rawCollection->forAll(
                 function (
                     /** @noinspection PhpUnusedParameterInspection */

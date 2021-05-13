@@ -23,27 +23,27 @@ class AnnotationDriver implements AnnotationDriverInterface
     /**
      * @var Reader
      */
-    protected $reader;
+    private $reader;
 
     /**
      * @var string
      */
-    protected $rootDir;
+    private $rootDir;
 
     /**
      * @var string[]
      */
-    protected $directoryNames = [];
+    private $directoryNames = [];
 
     /**
-     * @var string[]
+     * @var string[] | null
      */
-    protected $annotationClasses;
+    private $annotationClasses;
 
     /**
-     * @var string[]
+     * @var array | null
      */
-    protected $namespaces = [];
+    private $namespaces = [];
 
     /**
      * EntityAnnotationDriver constructor.
@@ -71,11 +71,11 @@ class AnnotationDriver implements AnnotationDriverInterface
     }
 
     /**
-     * @return string[]
+     * @return array
      */
     public function getNamespaces(): array
     {
-        return $this->namespaces;
+        return (array)$this->namespaces;
     }
 
     /**

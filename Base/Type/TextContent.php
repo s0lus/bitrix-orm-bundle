@@ -45,10 +45,10 @@ class TextContent
     public function getText(): string
     {
         if ($this->matchType(self::TYPE_HTML)) {
-            return html_entity_decode((string)$this->text);
+            return html_entity_decode($this->text);
         }
 
-        return (string)$this->text;
+        return $this->text;
     }
 
     /**
@@ -64,11 +64,11 @@ class TextContent
     }
 
     /**
-     * @param $type
+     * @param string $type
      *
      * @return boolean
      */
-    private function matchType($type): bool
+    private function matchType(string $type): bool
     {
         return strtolower($this->getType()) === $type;
     }
@@ -78,7 +78,7 @@ class TextContent
      */
     public function getType(): string
     {
-        return (string)$this->type;
+        return $this->type;
     }
 
     /**

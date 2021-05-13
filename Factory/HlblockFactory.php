@@ -47,9 +47,7 @@ class HlblockFactory
      */
     public static function createTableObjectWithCache(string $hlBlockName): HlDataManager
     {
-        $callback = function () use ($hlBlockName) {
-
-            /** @var Query $query */
+        $callback = function () use ($hlBlockName) : array {
             $query  = HighloadBlockTable::query();
             $result = $query->setFilter(['NAME' => $hlBlockName])
                             ->setSelect(['*'])
@@ -139,7 +137,7 @@ class HlblockFactory
     /**
      * @param array $fields Поля.
      *
-     * @return AbstractHlblockTable
+     * @return HlDataManager
      */
     protected static function getEntityClass(array $fields): HlDataManager
     {

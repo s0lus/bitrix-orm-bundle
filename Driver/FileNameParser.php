@@ -13,17 +13,17 @@ class FileNameParser implements FileParserInterface
     /**
      * @var string
      */
-    protected $fileName;
+    private $fileName;
 
     /**
      * @var string
      */
-    protected $namespacePrefix;
+    private $namespacePrefix;
 
     /**
      * @var string
      */
-    protected $namespaceRoot;
+    private $namespaceRoot;
 
     /**
      * FakeFileParser constructor.
