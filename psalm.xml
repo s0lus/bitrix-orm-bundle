@@ -27,6 +27,16 @@
     </extraFiles>
 
     <issueHandlers>
+        <DeprecatedMethod>
+            <errorLevel type="suppress">
+                <directory name="/"/>
+            </errorLevel>
+        </DeprecatedMethod>
+        <DeprecatedClass>
+            <errorLevel type="suppress">
+                <directory name="/"/>
+            </errorLevel>
+        </DeprecatedClass>
         <UndefinedGlobalVariable>
             <errorLevel type="suppress">
                 <referencedVariable name="$APPLICATION" />
@@ -45,6 +55,12 @@
                 <directory name="/"/>
             </errorLevel>
         </UndefinedConstant>
+
+        <UndefinedClass>
+            <errorLevel type="suppress">
+                <file name="Base/Query/SearchQuery.php"/>
+            </errorLevel>
+        </UndefinedClass>
 
         <UndefinedMagicPropertyFetch>
             <errorLevel type="suppress">

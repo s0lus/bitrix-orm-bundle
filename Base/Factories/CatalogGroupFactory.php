@@ -3,6 +3,7 @@
 namespace Prokl\BitrixOrmBundle\Base\Factories;
 
 use Prokl\BitrixOrmBundle\Base\Model\CatalogGroup;
+use Prokl\BitrixOrmBundle\Base\Model\Interfaces\BitrixArrayItemInterface;
 
 class CatalogGroupFactory extends CdbResultItemFactory
 {
@@ -32,7 +33,7 @@ class CatalogGroupFactory extends CdbResultItemFactory
     /**
      * @param array $data
      *
-     * @return CatalogGroup
+     * @return BitrixArrayItemInterface
      */
     public function createItem(array $data): BitrixArrayItemInterface
     {

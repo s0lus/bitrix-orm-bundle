@@ -360,6 +360,7 @@ class IblockTools
             );
         }
 
+        /** @psalm-suppress RedundantCast */
         $iblockId = (int)$fields[self::IBLOCK_ID_KEY];
         $propertyValues = [];
 

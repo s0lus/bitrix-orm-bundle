@@ -20,7 +20,7 @@ abstract class CollectionBase extends ArrayCollection
      */
     public function getImplodedNames(string $glue = ', '): string
     {
-        $doGetName = static function (HasNameInterface $item) {
+        $doGetName = static function (HasNameInterface $item) : string {
             return $item->getName();
         };
 

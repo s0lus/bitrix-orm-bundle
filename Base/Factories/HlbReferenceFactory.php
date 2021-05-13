@@ -2,6 +2,7 @@
 
 namespace Prokl\BitrixOrmBundle\Base\Factories;
 
+use Prokl\BitrixOrmBundle\Base\Model\D7Item;
 use Prokl\BitrixOrmBundle\Base\Model\HlbReferenceItem;
 
 class HlbReferenceFactory extends D7ItemFactory
@@ -17,7 +18,7 @@ class HlbReferenceFactory extends D7ItemFactory
     /**
      * @param array $fields
      *
-     * @return HlbReferenceItem
+     * @return D7Item
      */
     public function createItem(array $fields): D7Item
     {
