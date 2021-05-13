@@ -12,12 +12,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 interface AnnotationProcessorInterface
 {
     /**
-     * @param string              $name
+     * @param string              $class
      * @param AnnotationInterface $annotation
      *
      * @return ArrayCollection
      */
-    public function process(string $name, AnnotationInterface $annotation): ArrayCollection;
+    public function process(string $class, AnnotationInterface $annotation): ArrayCollection;
 
     /**
      * @param object $annotation
