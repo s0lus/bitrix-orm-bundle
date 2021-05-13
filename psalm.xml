@@ -56,6 +56,12 @@
             </errorLevel>
         </UndefinedConstant>
 
+        <UndefinedFunction>
+            <errorLevel type="suppress">
+                <directory name="/"/>
+            </errorLevel>
+        </UndefinedFunction>
+
         <UndefinedClass>
             <errorLevel type="suppress">
                 <file name="Base/Query/SearchQuery.php"/>

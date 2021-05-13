@@ -13,6 +13,8 @@ use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceExce
 /**
  * Class RepositoryRegistry
  * @package Prokl\BitrixOrmBundle\Registry
+ *
+ * @psalm-suppress PossiblyNullArgument
  */
 class RepositoryRegistry implements RepositoryRegistryInterface, ContainerAwareInterface
 {
